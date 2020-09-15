@@ -38,27 +38,33 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/users', (req, res) => {
-    con.query('select * from users', function(error, rows, fields){
-        if(error) console.log(error)
-        else{
-            // console.log(rows);
-            res.send(rows);
-        }
-    });
-});
+// app.get('/users', (req, res) => {
+//     res.json({
+//         message:"you are in users baby"
+//     });
+// });
+
+// app.get('/users', (req, res) => {
+//     con.query('select * from users', function(error, rows, fields){
+//         if(error) console.log(error)
+//         else{
+//             // console.log(rows);
+//             res.send(rows);
+//         }
+//     });
+// });
 
 
-app.post('/users', (req, res) => {
-    let post = { id: req.body.id, name: req.body.user, score: req.body.score };
-    console.log(req.body.id);
-    let sql = 'INSERT INTO users SET ?';
-    let query = con.query(sql, post, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Posts 1 added...');
-    });
-});
+// app.post('/users', (req, res) => {
+//     let post = { id: req.body.id, name: req.body.user, score: req.body.score };
+//     console.log(req.body.id);
+//     let sql = 'INSERT INTO users SET ?';
+//     let query = con.query(sql, post, (err, result) => {
+//         if (err) throw err;
+//         console.log(result);
+//         res.send('Posts 1 added...');
+//     });
+// });
 
 app.post('/users/delete', (req, res) => {
     // let post = [req.body.score]
