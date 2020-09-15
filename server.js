@@ -22,6 +22,7 @@ const server = app.listen(port_, function(){
     const host = server.address().address
     const port = server.address().port
 });
+
 // const server = app.listen(5000, function(){
 //     const host = server.address().address
 //     const port = server.address().port
@@ -38,11 +39,11 @@ app.get('/', (req, res) => {
     });
 });
 
-// app.get('/users', (req, res) => {
-//     res.json({
-//         message:"you are in users baby"
-//     });
-// });
+app.get('/users', (req, res) => {
+    res.json({
+        message:"you are in users baby"
+    });
+});
 
 // app.get('/users', (req, res) => {
 //     con.query('select * from users', function(error, rows, fields){
